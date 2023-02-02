@@ -1,0 +1,595 @@
+/* --------------------------------------------------
+   CUSTOM UNIVERSAL STYLES AND HELPER CLASSES
+   REMEMBER MOBILE FIRST!!!
+   -------------------------------------------------- */
+   html, body {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    height: 100%;
+    font-family: "Open Sans";
+    }
+    
+    a {
+    color: #ffffff;
+    }
+    
+    a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    transition:  all 1s;
+    }
+    
+    a:active, a:focus {
+    text-decoration: none;
+    outline: none;
+    outline-offset: 0px;
+    }
+    
+    h1 {
+    font-size: 3.42857143em;
+    font-weight: 100;
+    margin-bottom: 35px;
+    }
+    
+    h2 {
+    font-size: 3.33333333em;
+    font-weight: 100;
+    }
+    
+    h3 {
+    font-size: 2.14285714em;
+    font-weight: 100;
+    margin: 0px;
+    padding: 0px 0px 20px 0px;
+    }
+    
+    h4 {
+    font-size: 1.78571429em;
+    font-weight: 700;
+    }
+    
+    h5 {
+    font-size: 1.42857143em;
+    font-weight: 100;
+    }
+    
+    .h5 {
+    font-size: 1.42857143em;
+    font-weight: 100;
+    }
+    
+    h6 {
+    font-size: 1.28571429em;
+    font-weight: 100;
+    }
+    
+    p {
+    font-size: 1.07142857em;
+    font-weight: 100;
+    }
+    
+    .bg-black {
+    background-color: #060606;
+    }
+    
+    /* --------------------------------------------------
+       CUSTOM GRID MARGINS
+       -------------------------------------------------- */
+    
+    .container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 4px;
+    padding-right: 4px;
+    }
+    
+    .container-fluid {
+      margin-right: auto;
+      margin-left: auto;
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+    .row {
+      margin-left: -4px;
+      margin-right: -4px;
+    }
+    .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+      position: relative;
+      min-height: 1px;
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+    
+    /* --------------------------------------------------
+       FORM DEFAULTS
+       -------------------------------------------------- */
+    
+    .form-control {
+    border-radius: 0px;
+    border: 1px solid #3E3F3A;
+    background: #ffffff;
+    color: #3E3F3A;
+    font-weight: 300;
+    }
+    
+    ::-webkit-input-placeholder { /* WebKit browsers */
+    font-style: italic;
+    }
+    
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    font-style: italic;
+    }
+    
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    font-style: italic;
+    }
+    
+    :-ms-input-placeholder { /* Internet Explorer 10+ */
+    font-style: italic;
+    }
+    
+    /* --------------------------------------------------
+       LOGIN PAGE STYLES
+       -------------------------------------------------- */
+    
+    .login-page .logo {
+    padding-top: 60px;
+    }
+    
+    .login-box {
+    background: #FFFFFF;
+    border: 1px solid #2f363b;
+    padding: 45px 40px 50px 40px;
+    margin: 60px 0px 60px 0px;
+    }
+    
+    .login-box input {
+    margin-bottom: 15px;
+    }
+    
+    input.icon-user {
+    background: url("../images/sprite-01.png") no-repeat #ffffff;
+    background-position: 0px -531px;
+    padding-left: 40px;
+    }
+    
+    input.icon-lock {
+    background: url("../images/sprite-01.png") no-repeat #ffffff;
+    background-position: 0px -568px;
+    padding-left: 40px;
+    }
+    
+    .login-box .divider {
+    border-bottom: 2px solid #49525a;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    
+    .login-box .btn-primary {
+    font-size: 1.42857143em;
+    font-weight: 100;
+    margin-top: 25px;
+    }
+    
+    .login-box h3 {
+    margin-bottom: 20px;
+    }
+    
+    .login-trial {
+    text-align: center;
+    color:#ffffff;
+    font-size:20px;
+    }
+    
+    .login-trial .thirty-days {
+    margin-top:40px;
+    font-weight: bold;
+    }
+    
+    .login-trial .trial-divider {
+    width:100px;
+    display:block;
+    border-bottom:2px solid #5a646d;
+    margin:15px auto 15px auto;
+    }
+    
+    .login-trial .per-month {
+    font-size:18px;
+    }
+    
+    /* --------------------------------------------------
+       HEADER AREA STYLES
+       -------------------------------------------------- */
+    
+    header {
+    height: 60px;
+    }
+    
+    /* --------------------------------------------------
+       MODAL STYLES
+       -------------------------------------------------- */
+    
+    .modal-backdrop.in {
+    opacity: .95;
+    filter: alpha(opacity=95);
+    }
+    
+    .modal-backdrop {
+    background-color: #26295d;
+    }
+    
+    .modal-backdrop.show {
+    opacity: .9;
+    }
+    
+    button.close-modal {
+    border: 0px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2000;
+    }
+    
+    .modal-content {
+    -webkit-box-shadow: 0 0px 0px rgba(0,0,0,0);
+    box-shadow: 0 0px 0px rgba(0,0,0,0);
+    background-color: rgba(0,0,0,0);
+    border: 0px;
+    text-align: center;
+    }
+    
+    .modal-dialog {
+    margin: 100px auto;
+    }
+    
+    .modal { overflow-y: auto !important; }
+    
+    .modal-content ul {
+    text-align: left;
+    }
+    
+    /* --------------------------------------------------
+       TABLE AREA STYLES
+       -------------------------------------------------- */
+    
+    .table-main {
+    margin-top: 15px;
+    }
+    
+    /* --------------------------------------------------
+       HEADER AREA STYLES
+       -------------------------------------------------- */
+    
+    .bg-header {
+    background: #26295d;
+    color: #ffffff;
+    }
+    
+    .site-title {
+    font-family: "Oswald" !important;
+    font-size: 35px !important;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    }
+    
+    .site-menu-item {
+    font-family: "Open Sans" !important;
+    }
+    
+    /* --------------------------------------------------
+       FOOTER AREA STYLES
+       -------------------------------------------------- */
+    
+    .push-footer-noheader {
+    min-height: 100%;
+    margin-bottom: -60px;
+    position: relative;
+    padding-bottom: 90px;
+    }
+    
+    .push-footer {
+    min-height: 100%;
+    margin-top: -60px;
+    margin-bottom: -60px;
+    position: relative;
+    padding-top: 90px;
+    padding-bottom: 90px;
+    }
+    
+    .clearfooter {
+    height: 60px;
+    clear: both;
+    }
+    
+    footer {
+    background: #26295d;
+    color: #ffffff;
+    font-size: 11px;
+    padding: 10px 0px 10px 0px;
+    font-weight: 500;
+    height: 60px;
+    position: relative;
+    }
+    
+    footer a {
+    color: #ffffff;
+    text-decoration: none;
+    }
+    
+    footer a:hover {
+    transition:  all 1s;
+    }
+    
+    footer .copyright, footer .links {
+    text-align: center;
+    }
+    
+    footer .footer-terms {
+    text-align:center;
+    }
+    
+    footer .footer-logo {
+    text-align:center;
+    }
+    
+    footer .footer-copy {
+    text-align:center;
+    }
+    
+    @media only screen and (min-width: 768px) {
+        footer .footer-terms {
+            margin-top:10px;
+            text-align:left;
+            vertical-align:middle;
+        }
+    
+        footer .footer-logo {
+            margin-top:5px;
+            text-align:center;
+        }
+    
+        footer .footer-copy {
+            margin-top:10px;
+            text-align:right;
+            vertical-align:middle;
+        }
+    }
+    
+    .footer-disclaimer {
+    text-align:center;
+    font-size: 11px;
+    color: grey;
+    margin-top:30px;
+    }
+    
+    .footer-disclaimer a {
+    color: grey;
+    text-decoration: underline;
+    }
+    
+    .footer-powered {
+    text-align:center;
+    font-size:11px;
+    margin-bottom:20px;
+    }
+    
+    .footer-powered-by {
+    text-align:center;
+    font-size:11px;
+    margin-bottom:20px;
+    }
+    
+    .sponsered-by {
+    text-align:center;
+    font-size:12px;
+    margin-top:20px;
+    margin-bottom:20px;
+    }
+    
+    .marketing-message {
+    text-align:center;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    font-size: 18px !important;
+    }
+    
+    .marketing-message-large {
+    font-size: 22px !important;
+    font-weight: bold;
+    }
+    
+    .shop-results-header {
+    font-weight: bold;
+    }
+    
+    .shop_result_click {
+    cursor: pointer;
+    }
+    
+    .shop-results-container {
+    flex: 1 1 auto;
+    }
+    
+    .shop-results {
+    flex: 1 1 auto;
+    display:none;
+    height: 0px;
+    font-size:10px;
+    background-color:#ffffff;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border:1px;
+    border-color:#3E3F3A;
+    border-style:solid;
+    }
+    
+    .shop-results-disclaimer {
+    display:none;
+    font-size:10px;
+    font-style:italic;
+    text-align:center;
+    }
+    
+    .shop-results-disclaimer a {
+    color: blue;
+    text-decoration: underline;
+    font-style:italic;
+    }
+    
+    #map {
+        width: 100%;
+        height: 100%;
+        background-color: grey;
+    }
+    
+    @media only screen and (min-width: 768px) {
+        .map-row-form {
+            height:450px;
+            overflow: hidden;
+        }
+    }
+    
+    .map-row {
+    height:450px;
+    }
+    
+    .contact-form-custom-fields {
+    border-top: 1px solid #5f696f;
+    margin: 0px 0px 15px 0px;
+    }
+    
+    .contact-form-custom-fields .col-sm-12 {
+    padding: 15px 0px 5px 0px;
+    }
+    
+    .dropdown-item:hover, .dropdown-item:focus {
+      color: #fff;
+      text-decoration: none;
+      background-color: #484848;
+    }
+    
+    .custom-file-label {
+    border-radius: 0px 0px 0px 0px;
+    }
+    
+    .custom-file-label::after {
+    border-radius: 0px 0px 0px 0px;
+    }
+    
+    .custom-file-label {
+    color: #000;
+    }
+    
+    .row-border-bottom {
+    border-bottom: 1px solid #5f696f;
+    }
+    
+    .row-border-bottom .col-sm-6 {
+    padding: 0px 0px 15px 0px;
+    }
+    
+    .row-border-top {
+    border-top: 1px solid #5f696f;
+    }
+    
+    .row-border-top .col-sm-6 {
+    padding: 15px 0px 0px 0px;
+    }
+    
+    .stats-row {
+    padding: 15px 0px 0px 0px;
+    }
+    
+    .stats-row-last {
+    padding: 15px 0px 15px 0px;
+    }
+    
+    .btn-search {
+    background-color: #26295d;
+    border-color: #26295d;
+    color: #fff;
+    }
+    
+    .hero-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    }
+    
+    @media only screen and (max-width: 767px) {
+        .hero-logo-background {
+            margin-bottom:10px;
+        }
+    }
+    
+    @media only screen and (min-width: 768px) {
+        .hero-logo-background {
+            background-image:url('/static/images/laborratehero_hero.png');
+            background-repeat:no-repeat;
+            background-size:100%;
+        }
+    }
+    
+    .mapBodyContent {
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-weight: 500;
+    }
+    
+    .mapBodyContent a {
+    color: blue;
+    text-decoration: underline;
+    }
+    
+    .mapBodyContent .rate {
+    padding-right: 5px;
+    white-space: nowrap;
+    }
+    
+    .mapBodyContent .rate-data {
+    padding-right: 8px;
+    }
+    
+    .stat-results {
+    margin-top:20px;
+    margin-bottom:20px;
+    }
+    
+    .stat-table {
+    border: 0px;
+    border-collapse: collapse;
+    width: 100%;
+    }
+    
+    .stat-table td {
+    font-size: 12px;
+    vertical-align: bottom;
+    }
+    
+    .stat-table-data {
+    text-align: center;
+    }
+    
+    .tagline {
+    font-style: italic;
+    font-weight: bold;
+    }
+    
+    .grayout {
+    opacity: 0.6;
+    filter: alpha(opacity = 60);
+    }
+    
