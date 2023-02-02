@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>LaborRateHero</title>
+</head>
+<body>
+  <div class="main-wrapper-nav main-wrapper">
+    <nav class="navbar">
+        <div class="brand-title">LaborRateHero</div>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+          <ul>
+            <li><a href="#">Submit Rates</a></li>
+            <li><a href="#">Sponsor A Market</a></li>
+          </ul>
+        </div>
+      </nav>
+      </div>
+      <div class="main-wrapper-body main-wrapper">
+        <div class="row">
+        <div class="header">
+      <h2>The New Auto Collision Repair Industry Standard for Measuring & Reporting Market Labor Rates</h2>
+      </div>
+      <main>
+      <!-- <div>
+        <img src ="https://www.laborratehero.com/static/images/laborratehero_hero.png" />
+      </div> -->
+      <div class="form-div">
+      <form>
+        <label for="z_code">Zip Code</label><br>
+        <input type="text" id="z_code" name="z_code"><br>
+        <label for="s_range">Search Range</label><br>
+        <input type="text" id="s_range" name="s_range">
+        <br>
+        <input type="button" value="Find Shops">
+      </form> 
+    </div>
+
+      <div class="map-div" id="map">
+        Map Goes Here
+      </div>
+    </main>
+  </div>
+      </div>
+
+      <section class="information">
+        <p>Labor rate prices displayed are self-reported by collision repair centers. Price is not the only factor to consider when selecting a collision repair center. Customers may also consider their type of vehicle and the shop's training, equipment, and certifications as other criteria. Customers can confirm labor prices and other criteria with their collision center.</p>
+        <p>*NABR verifies collision certifications annually, provided that OEMs publish their certified shop lists publicly. Labor prices may be higher for these body shops to account for their investment required to achieve certification. Customers can confirm manufacturer collision certifications through the Certified1Stop.com portal. </p>
+      </section>
+      
+      <footer>
+        <div class="footer-content">
+        <div>
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of use</a> |
+            <a href="#">Contact Us</a> |
+            <a href="#">Labor Rate Survey</a>
+        </div>
+    
+    <div>
+        <p>Copyright © 2023 National AutoBody Research. All Rights Reserved.</p>
+    </div>
+  </div>
+    </footer>
+  
+ 
+  
+ 
+    </body>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
+    <script src="map.js"></script>
+    <script src="nav.js"></script>
+</body>
+</html>
