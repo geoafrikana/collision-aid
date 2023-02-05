@@ -97,6 +97,10 @@ body {
     background-color: rgb(4, 92, 255);
 }
 
+#my-nav-home, #my-nav-home:visited, #my-nav-home:hover{
+    text-decoration: none;
+    color: white;
+}
 .my-toggle-button {
     position: absolute;
     top: .75rem;
