@@ -3,28 +3,25 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Collision Aid</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">  
 </head>
   <body>
-	<nav class="navbar navbar-expand-md bg-light">
-		<div class="h-6 container-fluid">
-		  <a class="navbar-brand" href="#">Collision Aid</a>
-		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-		  data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" 
-		  aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		  </button>
-		  
-		  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-			<div class="navbar-nav">
-				<a class="nav-link" href="#">Submit Rate</a>
-				<a class="nav-link" href="#">Sponsor a Market</a>
-			</div>
-		  </div>
-		</div>
-	  </nav>
+	<nav class="my-navbar">
+        <div class="brand-title">Collision Aid</div>
+        <a href="#" class="my-toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="my-navbar-links">
+          <ul>
+            <li><a href="./ratesurvey.html">Submit Rates</a></li>
+            <li><a href="#">Sponsor a Market</a></li>
+          </ul>
+        </div>
+      </nav>
     <div class="mt-3 container">
 	<div class="row">
 
@@ -34,25 +31,26 @@
 					</h1>
 			</div>
 			
-			<div class="row">
+			<div class="row mx-auto">
 
-				<div class="col-md-4 bg-warning">
-					<form class="p-3">
-					  <label for="fname">First name:</label><br>
-					  <input type="text" class="w-100" id="fname" name="fname"><br>
-					  <label for="lname">Last name:</label><br>
-					  <input type="text" class="w-100" id="lname" name="lname">
+				<div id="left" 
+				class="col-md-4" >
+					<form class="p-3 w-100">
+					  <label for="zip_code">Zip Code:</label><br>
+					  <input type="text" class="w-100" id="zip_code" name="zip_code"><br>
+					  <label for="search_radius">Search Radius:</label><br>
+					  <input type="text" class="w-100" id="search_radius" name="search_radius">
 					</form>
-								</div>
+				</div>
 	<div id='map' class="col-md-8 bg-secondary">Map</div>
 							
 			</div>
 
-			<div  class="row mt-5  text-center">
-				<small id="top-header" class="text-muted mx-auto pb-3">
-					Labor rate prices displayed are self-reported by collision repair centers. Price is not the only factor to consider when selecting a collision repair center. Customers may also consider their type of vehicle and the shop's training, equipment, and certifications as other criteria. Customers can confirm labor prices and other criteria with their collision center.
-				</small>
-				<small id="top-header" class="text-muted mx-auto pb-3">
+			<div  class="row mt-5 mx-auto  text-center">
+		<small id="top-header" class="text-muted mx-auto pb-3">
+		Labor rate prices displayed are self-reported by collision repair centers. Price is not the only factor to consider when selecting a collision repair center. Customers may also consider their type of vehicle and the shop's training, equipment, and certifications as other criteria. Customers can confirm labor prices and other criteria with their collision center.
+		</small>
+		<small id="top-header" class="text-muted mx-auto pb-3">
 *NABR verifies collision certifications annually, provided that OEMs publish their certified shop lists publicly. Labor prices may be higher for these body shops to account for their investment required to achieve certification. Customers can confirm manufacturer collision certifications through the Certified1Stop.com portal.
 </small>
 			</div>
@@ -61,8 +59,8 @@
 	</div>
 	</div>
 	<div class="container-fluid">
-	<footer class="row navbar text-center bg-dark">
-		<div class="col-md-6 text-light">
+	<footer class="row navbar text-center">
+		<div class="col-md-6 ">
 			<a href="#"><small>Policy</small></a>
 			<small>|</small>
 			<a href="#"><small>Terms of Use</small></a>
@@ -81,5 +79,9 @@
 </div>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>  
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+	<script src="map.js"></script>
+	<script src="nav.js"></script>
 </body>
 </html>
