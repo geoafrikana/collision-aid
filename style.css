@@ -1,3 +1,18 @@
 #map{
-    height: 180px
+    height: 70vh;
+}
+
+#top-header{
+    max-width: 900px;
+}
+
+small{
+    font-size: 0.6rem ;
+}
+
+@media screen and (max-width: 768px) {
+    #map{
+        height: 50vh;
+        margin-top:10px
+    }
 }
