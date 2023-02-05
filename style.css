@@ -1,0 +1,160 @@
+.lr{
+    position: relative;
+    left:0;
+    width: 100%;
+    max-width: 450px;
+    
+}
+.lr label{
+    float: right;
+}
+
+
+#map{
+    height: 70vh;
+}
+
+#top-header{
+    max-width: 900px;
+}
+
+small{
+    font-size: 0.6rem ;
+}
+
+#left{
+    border-top-left-radius: 20px;
+    /* background-image: url("./static/images/laborratehero_hero.png"); */
+}
+
+#logo-text{
+    color: white;
+
+}
+
+
+footer, nav{
+background-color: rgb(20, 8, 180);
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+footer small {
+    color: white;
+}
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.my-navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(20, 8, 180);
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+.my-navbar-links {
+    height: 100%;
+}
+
+.my-navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.my-navbar-links li {
+    list-style: none;
+}
+
+.my-navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+
+.my-navbar-links li:hover {
+    background-color: rgb(4, 92, 255);
+}
+
+.my-toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.my-toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+    #map{
+        height: 50vh;
+        margin-top:10px
+    }
+
+    #left{
+        background-image: none;
+    }
+
+    .my-navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .my-toggle-button {
+        display: flex;
+    }
+
+    .my-navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .my-navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .my-navbar-links ul li {
+        text-align: center;
+    }
+
+    .my-navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .my-navbar-links.active {
+        display: flex;
+    }
+}
+
