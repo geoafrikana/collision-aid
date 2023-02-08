@@ -9,7 +9,7 @@
 </head>
   <body>
 	<nav class="my-navbar">
-        <div class="brand-title"><a id="my-nav-home" href="./index.html">Collision Aid</a></div>
+        <div class="brand-title"><a id="my-nav-home" href="./index.html"><img class="img-logo" src="./static/images/logo.jpg" alt=""></a></div>
         <a href="#" class="my-toggle-button">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -38,8 +38,19 @@
 					<form class="p-3 w-100">
 					  <label for="zip_code">Zip Code:</label><br>
 					  <input type="text" class="w-100" id="zip_code" name="zip_code"><br>
+
+
 					  <label for="search_radius">Search Radius:</label><br>
-					  <input type="text" class="w-100" id="search_radius" name="search_radius">
+					  	<select class="w-100" name="search_radius" id="search_radius">
+  							<option value="2_miles">2 miles</option>
+  							<option value="5_miles">5 miles</option>
+  							<option value="10_miles">10 miles</option>
+  							<option value="15_miles">15 miles</option>
+  							<option value="20_miles">20 miles</option>
+  							<option value="25_miles">25 miles</option>
+						</select>
+					  <!-- <input type="text" class="w-100" id="search_radius" name="search_radius"> -->
+
 					</form>
 				</div>
 	<div id='map' class="col-md-8 bg-secondary">Map</div>

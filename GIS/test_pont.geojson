@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "test_pont",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::26911" } },
+"features": [
+{ "type": "Feature", "properties": { "ZIP": 90241, "LAT": 33.940445, "LNG": -118.129022 }, "geometry": { "type": "Point", "coordinates": [ 395661.996385576552711, 3756126.676815492101014 ] } }
+]
+}

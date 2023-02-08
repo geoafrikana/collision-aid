@@ -32,9 +32,13 @@ small{
 
 }
 
+.img-logo {
+    width: 100px;
+}
 
-footer, nav{
-background-color: rgb(20, 8, 180);
+
+footer, .my-navbar{
+background-color: rgb(143, 38, 38);
 }
 
 footer a{
@@ -62,7 +66,6 @@ body {
     position: relative;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(20, 8, 180);
     color: white;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
@@ -94,7 +97,7 @@ body {
 }
 
 .my-navbar-links li:hover {
-    background-color: rgb(4, 92, 255);
+    background-color: rgb(232, 103, 99);
 }
 
 #my-nav-home, #my-nav-home:visited, #my-nav-home:hover{
