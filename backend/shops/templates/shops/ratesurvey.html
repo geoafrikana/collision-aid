@@ -1,0 +1,249 @@
+{% extends 'shops/base.html' %}
+{% load static %}
+
+{% block title%}Rate Survey Form{% endblock %}
+
+{% block body %}
+
+<div class="mt-3 container">
+    <div class="row">
+
+        <div class="row text-center mb-3">
+            <h2 class="h3">Labour Rate Survey</h2>
+        </div>
+
+
+        <div>
+            <h4 class="h6 text-left">NOTE</h4>
+            <ol>
+                <li>This is for collision shops only. Authorized personnel should be the one to fill out the form.</li>
+                <li>Please fill out form in full. This is the information used to generate labour market rates</li>
+                <li>If your rates change please feel free to come back and update your information</li>
+                <li>All fields are required</li>
+            </ol>
+            <p>Thank you for your participation!</p>
+            <hr>
+        </div>
+
+        <form action="#" id="rate-survey-form" class="mb-5">
+            <h4>Part 1 of 3: Contact Information</h4>
+            <p>So that we may contact you if we have questions about your survey, please provide the following
+                information about your shop</p>
+
+            <fieldset>
+                <legend>
+                    <h5>a. Shop Information</h5>
+                </legend>
+                <label class="" for="business_name">Business Name:</label><br>
+                <input type="text" class="w-50" required id="business_name" name="business_name"><br>
+
+                <label class="mt-3" for="physical_address">Physical Address:</label><br>
+                <input type="text" class="w-50" required id="physical_address" name="physical_address"><br>
+
+                <label class="mt-3" for="business_phone">Business Phone:</label><br>
+                <input type="text" class="w-50" required id="business_phone" name="business_phone"><br>
+
+                <label class="mt-3" for="city">City:</label><br>
+                <input type="text" class="w-50" required id="city" name="city"><br>
+
+                <label class="mt-3" for="website">Website:</label><br>
+                <input type="url" class="w-50" required id="website" name="website"><br>
+            </fieldset>
+
+
+            <hr class="mt-5">
+
+
+            <fieldset>
+                <legend>
+                    <h5>b. Contact Information</h5>
+                </legend>
+                <label for="first_name">First Name:</label><br>
+                <input class="mb-2 w-50" required type="text" id="first_name" name="first_name"><br>
+
+                <label for="last_name">Last Name:</label><br>
+                <input type="text" required class="w-50 mb-2" id="last_name" name="last_name"><br>
+
+                <label for="title_position">Your Position/Title:</label><br>
+                <input type="text" required class="w-50 mb-2" id="title_position" name="title_position"><br>
+
+                <label for="cell_phone">Cell Phone:</label><br>
+                <input type="text" placeholder="234-555-1234" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="w-50 mb-2"
+                    id="cell_phone" name="cell_phone" required><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" class="w-50 mb-2" id="email" name="email" required><br>
+
+                <label for="confirm_email">Confirm Email:</label><br>
+                <input type="text" class="w-50 mb-2" id="confirm_email" name="confirm_email" required><br>
+            </fieldset>
+
+            <hr class="my-4">
+            <h4>Part 2 of 3: Contact Information</h4>
+            <p>Please enter your current <a href="#">Posted Labor Rate.</a>
+                These are sometimes referred to as your retail rates, door rates, or walk-in rates.
+                <u>DO NOT</u> enter any discount rates, such as DRP, fleet, or wholesale rates.
+            </p>
+
+            <fieldset class="lr">
+                <legend>
+                    <h5>a. Posted Labour Rates</h5>
+                </legend>
+
+
+                <label class="mt-3" for="body_sheet_metal">Body/Sheet Metal:
+                    <input type="text" class="" id="body_sheet_metal" name="body_sheet_metal" required>
+                    per hr
+                </label>
+
+                <br>
+
+                <label class="mt-3 " for="aluminum_body">Aluminum Body:
+                    <input type="text" class="" id="aluminum_body" name="aluminum_body" required>
+                    per hr
+                </label>
+                <br>
+
+
+                <label class="mt-3" for="refinish_labour">Refinish Labour:
+                    <input type="text" class="" id="refinish_labour" name="refinish_labour" required>
+                    per hr
+                </label>
+                <br>
+
+
+                <label class="mt-3" for="aluminum_structure">Aluminum Structure:
+                    <input type="text" class="" id="aluminum_structure" name="aluminum_structure" required>
+                    per hr
+                </label>
+                <br>
+
+                <label class="mt-3" for="structural">Structural:
+                    <input type="text" class="" id="structural" name="structural" required>
+                    per hr
+                </label>
+                <br>
+
+                <label class="mt-3" for="carbon_fibre">Carbon Fibre:
+                    <input type="text" class="" id="carbon_fibre" name="carbon_fibre" required>
+                    per hr
+                </label>
+                <br>
+
+                <label class="mt-3" for="frame">Frame:
+                    <input type="text" required class="" id="frame" name="frame">
+                    per hr
+                </label>
+                <br>
+
+                <label class="mt-3" for="fibre_glass">Fibre Glass:
+                    <input type="text" required class="" id="fibre_glass" name="fibre_glass">
+                    per hr
+                </label>
+                <br>
+
+                <label class="mt-3" for="mechanical">Mechanical:
+                    <input type="text" required class="" id="mechanical" name="mechanical">
+                    per hr
+                </label>
+                <br>
+
+                <label class="mt-3" for="paint_materials">Paint Materials:
+                    <input type="text" required class="" id="paint_materials" name="paint_materials">
+                    per hr
+                </label>
+                <br>
+
+                <label class="mt-3" for="luxury_body">Luxury Body:
+                    <input type="text" class="" required id="luxury_body" name="luxury_body">
+                    per hr
+                </label>
+                <br>
+
+                <label class="mt-3" for="luxury_refinish">Luxury Refinish:
+                    <input type="text" required class="" id="luxury_refinish" name="luxury_refinish">
+                    per hr
+                </label>
+                <br>
+
+                <label class="mt-3" for="luxury_frame">Luxury Structural:
+                    <input type="text" class="" required id="luxury_frame" name="luxury_frame">
+                    per hr
+                </label>
+                <br>
+
+                <label class="mt-3" for="luxury_frame">Luxury Frame:
+                    <input type="text" required class="" id="luxury_frame" name="luxury_frame">
+                    per hr
+                </label>
+                <br>
+
+                <label class="mt-3" for="luxury_mechanical">Luxury Mechanical:
+                    <input type="text" class="" id="luxury_mechanical" name="luxury_mechanical">
+                    per hr
+                </label>
+                <br>
+
+
+
+
+            </fieldset>
+
+            <hr class="my-4">
+            <fieldset class="lr">
+                <legend>
+                    <h5>b. Prices for other Services</h5>
+                </legend>
+                <label class="mt-3" for="inside_storage">Inside Storage:
+                    <input type="text" class="" required id="inside_storage" name="inside_storage">
+                    per hr
+                </label>
+                <br>
+
+                <label class="mt-3" for="outside_storage">Outside Storage:
+                    <input type="text" class="" required id="outside_storage" name="outside_storage">
+                    per hr
+                </label>
+                <br>
+
+                <label class="mt-3" for="four_wheel_alignment">4 Wheel Alignment:
+                    <input type="text" class="" required id="four_wheel_alignment" name="four_wheel_alignment">
+                    per hr
+                </label>
+                <br>
+
+                <label class="mt-3" for="pre_scan">Pre-Scan:
+                    <input type="text" class="" required id="pre_scan" name="pre_scan">
+                    per hr
+                </label>
+                <br>
+
+                <label class="mt-3" for="post_scan">Post-Scan:
+                    <input type="text" class="" required id="post_scan" name="post_scan">
+                    per hr
+                </label>
+                <br>
+
+            </fieldset>
+
+            <fieldset>
+                <hr class="my-4">
+                <h4>Part 3 of 3: Final Declaration</h4>
+                <input required type="checkbox" id="final_declaration" name="final_declaration"
+                    value="final_declaration">
+                <label for="final_declaration">I confirm that the labor rates provided above are my public posted labor
+                    rates, all other information is true and correct.</label><br>
+            </fieldset>
+            <br>
+            <input class="btn btn-primary w-100" type="submit" value="Submit">
+        </form>
+
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'shops/ratesurvey.js' %}"></script>
+{% endblock %}

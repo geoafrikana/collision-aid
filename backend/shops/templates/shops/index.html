@@ -8,57 +8,133 @@
 <div class="mt-3 container">
 	<div class="row">
 
-			<div  class="row text-center">
-				<h1 id="top-header" class="mx-auto h5 pb-3">
-					The New Auto Collision Repair Industry Standard for Measuring & Reporting Market Labor Rates
-					</h1>
+		<div class="row text-center">
+			<h1 id="top-header" class="mx-auto h5 pb-3">
+				The New Auto Collision Repair Industry Standard for Measuring & Reporting Market Labor Rates
+			</h1>
+		</div>
+
+		<div class="row mx-auto">
+
+			<div id="left" class="col-md-4">
+				<div id="alert" class="" role="alert"></div>
+				<form class="p-3 w-100" action="" id="home-form">
+					{% csrf_token %}
+					<label for="zip_code">Zip Code:</label><br>
+					<input type="text" class="w-100" id="zip_code" name="zip_code"><br>
+
+
+					<label for="search_radius">Search Radius:</label><br>
+					<select class="w-100" name="search_radius" id="search_radius">
+						<option value="2">2 miles</option>
+						<option value="5">5 miles</option>
+						<option value="10">10 miles</option>
+						<option value="15">15 miles</option>
+						<option value="20">20 miles</option>
+						<option value="25">25 miles</option>
+					</select>
+					<input type="submit" class='btn btn-primary w-100 mt-3' value="Search">
+					<!-- <input type="text" class="w-100" id="search_radius" name="search_radius"> -->
+
+				</form>
 			</div>
-			
-			<div class="row mx-auto">
+			<div class="col-md-8">
+				<div id="map" class="w-100 m-0 p-0"></div>
+				<div id="table-div" class="w-100 m-0 p-0">
 
-				<div id="left" 
-				class="col-md-4" >
-					<form class="p-3 w-100" action="" id="home-form">
-						{% csrf_token %}
-					  <label for="zip_code">Zip Code:</label><br>
-					  <input type="text" class="w-100" id="zip_code" name="zip_code"><br>
+					<table class="w-100 mt-3">
+						<thead>
+							<tr>
+							<th></th>
+							<th class="">Body</th>
+							<th class="">Refinish</th>
+							<th class="">Frame</th>
+							<th class="">Structure</th>
+							<th class="">Mech</th>
+							<th class="">Materials</th>
+							<th class="">Alum<br>Body</th>
+							<th class="">Alum<br>Struct</th>
+							<th class="">Storage</th>
+							<th class="">Pre-Scan</th>
+							<th class="">Post-Scan</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr id="highest">
+							<td>Highest</td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+						</tr>
+						<tr id="average">
+							<td>Average</td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+						</tr>
+						<tr id="lowest">
+							<td>Lowest</td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+							<td class=""></td>
+						</tr>
+					</tbody>
+					</table>
 
-
-					  <label for="search_radius">Search Radius:</label><br>
-					  	<select class="w-100" name="search_radius" id="search_radius">
-  							<option value="2">2 miles</option>
-  							<option value="5">5 miles</option>
-  							<option value="10">10 miles</option>
-  							<option value="15">15 miles</option>
-  							<option value="20">20 miles</option>
-  							<option value="25">25 miles</option>
-						</select>
-						<input type="submit" class='btn btn-primary w-100 mt-3' value="Search">
-					  <!-- <input type="text" class="w-100" id="search_radius" name="search_radius"> -->
-
-					</form>
 				</div>
-	<div id='map' class="col-md-8 bg-secondary">Map</div>
-							
 			</div>
 
-			<div  class="row mt-5 mx-auto  text-center">
-		<small id="top-header" class="text-muted mx-auto pb-3">
-		Labor rate prices displayed are self-reported by collision repair centers. Price is not the only factor to consider when selecting a collision repair center. Customers may also consider their type of vehicle and the shop's training, equipment, and certifications as other criteria. Customers can confirm labor prices and other criteria with their collision center.
-		</small>
-		<small id="top-header" class="text-muted mx-auto pb-3">
-*NABR verifies collision certifications annually, provided that OEMs publish their certified shop lists publicly. Labor prices may be higher for these body shops to account for their investment required to achieve certification. Customers can confirm manufacturer collision certifications through the Certified1Stop.com portal.
-</small>
-			</div>
+		</div>
+
+		<div class="row mt-5 mx-auto  text-center">
+			<small id="top-header" class="text-muted mx-auto pb-3">
+				Labor rate prices displayed are self-reported by collision repair centers. Price is not the only factor
+				to consider when selecting a collision repair center. Customers may also consider their type of vehicle
+				and the shop's training, equipment, and certifications as other criteria. Customers can confirm labor
+				prices and other criteria with their collision center.
+			</small>
+			<small id="top-header" class="text-muted mx-auto pb-3">
+				*NABR verifies collision certifications annually, provided that OEMs publish their certified shop lists
+				publicly. Labor prices may be higher for these body shops to account for their investment required to
+				achieve certification. Customers can confirm manufacturer collision certifications through the
+				Certified1Stop.com portal.
+			</small>
+		</div>
 
 
 	</div>
-	</div>
-    {% endblock %}
+</div>
+{% endblock %}
 
-    {% block scripts %}
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-    <script src="{% static 'shops/map.js'  %}"></script>
-    <script src="{% static 'shops/home_form.js'  %}"></script>
-    {% endblock %}
+{% block scripts %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+	integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+	integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+<script src="{% static 'shops/map.js'  %}"></script>
+<script src="{% static 'shops/home_form.js'  %}"></script>
+{% endblock %}

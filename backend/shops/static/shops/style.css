@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+#alert, #table-div{
+    display: none;
+}
+
+td{
+    font-size: 0.6rem;
+    padding: 3px
+}
+th{
+    font-size: 0.5rem;
+}
+
+table, th, td {
+    border: 1px solid rgb(233, 229, 229);
+    border-collapse: collapse;
+    text-align: center;
+    font-family: 'Open Sans';
+
+  }
+
 .lr{
     position: relative;
     left:0;

@@ -4,4 +4,4 @@ from .models import Shop
 
 @admin.register(Shop)
 class ShopAdmin(OSMGeoAdmin):
-    list_display = ('name','lat', 'lon')
+    list_display = ('business_name','lat', 'lon')
