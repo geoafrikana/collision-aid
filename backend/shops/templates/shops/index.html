@@ -21,11 +21,11 @@
 				<form class="p-3 w-100" action="" id="home-form">
 					{% csrf_token %}
 					<label for="zip_code">Zip Code:</label><br>
-					<input type="text" class="w-100" id="zip_code" name="zip_code"><br>
+					<input type="text" class="w-100" required id="zip_code" name="zip_code"><br>
 
 
 					<label for="search_radius">Search Radius:</label><br>
-					<select class="w-100" name="search_radius" id="search_radius">
+					<select class="w-100" name="search_radius" required id="search_radius">
 						<option value="2">2 miles</option>
 						<option value="5">5 miles</option>
 						<option value="10">10 miles</option>
@@ -42,7 +42,7 @@
 				<div id="map" class="w-100 m-0 p-0"></div>
 				<div id="table-div" class="w-100 m-0 p-0">
 
-					<table class="w-100 mt-3">
+					<table id="bottom-table" class="w-100 mt-3">
 						<thead>
 							<tr>
 							<th></th>

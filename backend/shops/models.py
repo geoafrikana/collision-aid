@@ -7,6 +7,7 @@ class Shop(models.Model):
     business_phone = models.CharField(max_length=20)
     city = models.CharField(max_length=50)
     website = models.CharField(max_length=50)
+    updated = models.DateField(auto_now=True)
 
     # Contact Information
     first_name = models.CharField(max_length=50)
@@ -28,6 +29,7 @@ class Shop(models.Model):
     paint_materials = models.IntegerField()
     luxury_body = models.IntegerField()
     luxury_refinish = models.IntegerField()
+    luxury_structural = models.IntegerField()
     luxury_frame = models.IntegerField()
     luxury_mechanical = models.IntegerField()
 
@@ -45,7 +47,7 @@ class Shop(models.Model):
     geom_m = models.PointField(srid=3857) # web mercator
 
     def __str__(self):
-        return self.name
+        return self.business_name
 
 class ZipCodes(models.Model):
     ZIP = models.CharField(max_length=6)

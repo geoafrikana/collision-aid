@@ -12,13 +12,21 @@ th{
     font-size: 0.5rem;
 }
 
-table, th, td {
+#bottom-table, #bottom-table th, #bottom-table td {
     border: 1px solid rgb(233, 229, 229);
     border-collapse: collapse;
     text-align: center;
     font-family: 'Open Sans';
 
   }
+
+  #popup-div{
+    font-family: 'Open Sans';
+  }
+
+#popup-div table, #popup-div tr, #popup-div th{
+    border: 0;
+} 
 
 .lr{
     position: relative;

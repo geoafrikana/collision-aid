@@ -1,5 +1,42 @@
 var map = L.map('map').setView([39, -95], 3);
-
+const popupTable = `
+<table class='w-100'>
+   <tbody>
+      <tr>
+         <td id='' class="rate">Body</td>
+         <td id='body_sheet_metal' class="rate-data">$52/hr</td>
+         <td class="rate">Frame</td>
+         <td id='frame' class="rate-data">$90</td>
+         <td class="rate">Pre-scan</td>
+         <td id='pre_scan' class="rate-data">N/A</td>
+      </tr>
+      <tr>
+         <td class="rate">Refinish</td>
+         <td id='refinish_labour' class="rate-data">$52/hr</td>
+         <td class="rate">Structure</td>
+         <td id='structural' class="rate-data">$80/hr</td>
+         <td class="rate">Post-scan</td>
+         <td id='post_scan' class="rate-data">N/A</td>
+      </tr>
+      <tr>
+         <td class="rate">Mech</td>
+         <td id='mechanical' class="rate-data">$95/hr</td>
+         <td class="rate">Alum Body</td>
+         <td id='aluminum_body' class="rate-data">N/A</td>
+         <td class="rate">Storage</td>
+         <td id='inside_storage' class="rate-data">N/A</td>
+      </tr>
+      <tr>
+         <td class="rate">Materials</td>
+         <td id='paint_materials' class="rate-data">N/A</td>
+         <td class="rate">Alum Struct</td>
+         <td id='alum_structure' class="rate-data">N/A</td>
+         <td></td>
+         <td></td>
+      </tr>
+   </tbody>
+</table>
+`
 const osm = L.tileLayer('http://mt0.google.com/vt/lyrs=m&hl=en&x={x}&y={y}&z={z}', {
     maxZoom: 18,
     attribution: 'Google Maps'
@@ -17,7 +54,6 @@ const form = document.getElementById('home-form');
 form.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    const formData = new FormData();
 
     const zip_code = document.getElementById('zip_code').value
     const search_radius = document.getElementById('search_radius').value
@@ -66,11 +102,25 @@ form.addEventListener('submit', (e) => {
                 let gj = JSON.parse(data['data'])
                 messageBox.classList.add('alert-success')
                 messageBox.innerText = `Your query return ${gj.features.length} shops`
+                console.log(gj.features)
 
                 let geoJSONLayer = L.geoJSON(gj, {
                     style: { color: 'red' }
 
-                }).bindPopup(layer => `<b>Name:</b> ${layer.feature.properties.business_name}`)
+                }).bindPopup(layer => {
+                return (`
+                <div id='popup-div'>
+                <b>${layer.feature.properties.business_name}</b>
+                <br>
+                <div
+                class='w-50 m-0'
+                >${layer.feature.properties.physical_address}</div>
+                <br>                
+                ${popupTable}</div>               
+                `)
+
+
+                })
 
                 geoJSONLayer.addTo(map)
                 map.fitBounds(geoJSONLayer.getBounds());

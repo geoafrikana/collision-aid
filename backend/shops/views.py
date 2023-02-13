@@ -26,7 +26,7 @@ def index(request):
                            'frame', 'structural','mechanical',
                             'paint_materials','aluminum_body',
                             'aluminum_structure', 'inside_storage',
-                            'pre_scan', 'post_scan'   ]
+                            'pre_scan', 'post_scan']
                 
                 average = [int(res.aggregate(Avg(field))[f'{field}__avg']) for field in fields]
                 highest = [int(res.aggregate(Max(field))[f'{field}__max']) for field in fields]
@@ -39,9 +39,10 @@ def index(request):
                 }
                 print(table)
                 response['table'] = table
+                ser_fields = fields +['business_name', 'physical_address', 'updated', ]
                 serialized_geojson = serialize('geojson',res,
                                 geometry_field='geom',
-                                fields=('business_name',) )
+                                fields=ser_fields )
                 response['data'] = serialized_geojson
         response['code'] = code
         
@@ -49,4 +50,8 @@ def index(request):
     return render(request, "shops/index.html")
 
 def rate_survey(request):
+    if request.method == 'POST':
+        a = {key:request.POST.get(key) for key in request.POST.keys()}
+        s = Shop(**a)
+        print(s)
     return render(request, 'shops/ratesurvey.html')
