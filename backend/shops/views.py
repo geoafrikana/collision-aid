@@ -1,9 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Shop, ZipCodes
 from django.core.serializers import serialize
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import JsonResponse
 from django.db.models import Max, Min, Avg
+import requests
+from django.core.exceptions import ValidationError
 
 
 def index(request):
@@ -52,6 +54,21 @@ def index(request):
 def rate_survey(request):
     if request.method == 'POST':
         a = {key:request.POST.get(key) for key in request.POST.keys()}
+        address = a.get('physical_address')
+        url= f'https://nominatim.openstreetmap.org/search/?q={address}&format=json'
+        r = requests.get(url)
+        try:
+            r = r.json()[0]
+        except:
+            return JsonResponse({'message': 'The physical location could not be verified, please check.'})
+        a['lat'] = float(r.get('lat'))
+        a['lon'] = float(r.get('lon'))
         s = Shop(**a)
-        print(s)
+        try:
+            s.clean()
+            print(s)
+        except ValidationError as e:
+            return JsonResponse({'message': 'The physical location could not be verified, please check.'})
+        s.save()
+        return JsonResponse({'message': 'Shop added successfully'})
     return render(request, 'shops/ratesurvey.html')

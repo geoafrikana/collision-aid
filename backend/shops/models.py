@@ -1,4 +1,6 @@
 from django.contrib.gis.db import models
+from django.contrib.gis.geos import Point
+from django.core.exceptions import ValidationError
 
 class Shop(models.Model):
     #  Shop Information
@@ -46,8 +48,30 @@ class Shop(models.Model):
     geom  = models.PointField(srid=4326)
     geom_m = models.PointField(srid=3857) # web mercator
 
+    def compute_geom(self):
+        geom = Point(x=self.lon, y=self.lat, srid=4326)
+        return geom
+
+    def compute_geom_m(self):
+        geom = self.geom
+        geom_m = geom.transform(3857, clone=True)
+        return geom_m
+    
+    def save(self, *args, **kwargs):
+        self.geom = self.compute_geom()
+        self.geom_m = self.compute_geom_m()
+        super(Shop, self).save(*args, **kwargs)
+    
+    def clean(self):
+        if not (self.lat and self.lon):
+            raise ValidationError ('The physical location could not be verified, please check.')
+        print('cleaning')
+        self.geom = self.compute_geom()
+        self.geom_m = self.compute_geom_m()
+        return True
+
     def __str__(self):
-        return self.business_name
+        return f"{self.business_name} {self.geom} {self.geom_m}"
 
 class ZipCodes(models.Model):
     ZIP = models.CharField(max_length=6)

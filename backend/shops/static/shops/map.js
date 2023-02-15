@@ -47,7 +47,7 @@ osm.addTo(map);
 
 
 
-
+const formData = new FormData()
 
 const form = document.getElementById('home-form');
 
@@ -83,7 +83,7 @@ form.addEventListener('submit', (e) => {
             messageBox.className = ''
             messageBox.classList.add('mx-3', 'py-2', 'alert')
             document.getElementById('table-div').style.display = 'none'
-            
+
             map.eachLayer((layer) => {
                 if (!(layer.name == 'googleBaseMap')) {
                     layer.remove();
@@ -102,13 +102,12 @@ form.addEventListener('submit', (e) => {
                 let gj = JSON.parse(data['data'])
                 messageBox.classList.add('alert-success')
                 messageBox.innerText = `Your query return ${gj.features.length} shops`
-                console.log(gj.features)
 
                 let geoJSONLayer = L.geoJSON(gj, {
                     style: { color: 'red' }
 
                 }).bindPopup(layer => {
-                return (`
+                    return (`
                 <div id='popup-div'>
                 <b>${layer.feature.properties.business_name}</b>
                 <br>
@@ -132,38 +131,36 @@ form.addEventListener('submit', (e) => {
                 let average_values = table['average']
 
                 Array.from(document.getElementById('highest').children)
-                .map((td, idx, _) => {
-                    if (idx != 0){
-                        td.innerHTML = `$${highest_values[idx-1]}`
-                    }
-                })
+                    .map((td, idx, _) => {
+                        if (idx != 0) {
+                            td.innerHTML = `$${highest_values[idx - 1]}`
+                        }
+                    })
 
                 Array.from(document.getElementById('lowest').children)
-                .map((td, idx, _) => {
-                    if (idx != 0){
-                        td.innerHTML = `$${lowest_values[idx-1]}`
-                    }
-                })
+                    .map((td, idx, _) => {
+                        if (idx != 0) {
+                            td.innerHTML = `$${lowest_values[idx - 1]}`
+                        }
+                    })
 
                 Array.from(document.getElementById('average').children)
-                .map((td, idx, _) => {
-                    if (idx != 0){
-                        td.innerHTML = `$${average_values[idx-1]}`
-                    }
-                })
+                    .map((td, idx, _) => {
+                        if (idx != 0) {
+                            td.innerHTML = `$${average_values[idx - 1]}`
+                        }
+                    })
 
                 document.getElementById('table-div').style.display = 'block'
 
 
 
 
-                
+
             }
 
             messageBox.style.display = 'block'
         })
 })
-
-
 
 
