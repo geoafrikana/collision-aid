@@ -2,6 +2,7 @@
 import csv
 from .models import Shop, ZipCodes
 from django.contrib.gis.geos import Point
+import random
 
 # python manage.py shell
 # from shops.models import Shop
@@ -40,6 +41,7 @@ def load_shop(fp):
         inside_storage = row[20]
         outside_storage = row[21]
         four_wheel_alignment = row[22]
+        luxury_structural = random.randint(50, 250)
         pre_scan = row[23]
         post_scan = row[24]
         loc_4326 = Point(x=lon_x, y=lat_y, srid=4326)
@@ -68,6 +70,7 @@ def load_shop(fp):
                 four_wheel_alignment  = four_wheel_alignment,
                 pre_scan  = pre_scan,
                 post_scan   = post_scan,
+                luxury_structural=luxury_structural,
                 geom=loc_4326, 
                 geom_m=loc_1324)
         s.save()
