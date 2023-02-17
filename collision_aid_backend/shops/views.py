@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .models import Shop, ZipCodes
 from django.core.serializers import serialize
 from django.core.exceptions import ObjectDoesNotExist
@@ -72,3 +72,6 @@ def rate_survey(request):
         s.save()
         return JsonResponse({'message': 'Shop added successfully'})
     return render(request, 'shops/ratesurvey.html')
+
+def contact(request):
+    return render(request, 'shops/contact.html')
