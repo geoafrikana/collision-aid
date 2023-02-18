@@ -9,53 +9,28 @@
 <hr>
 <p>To ask a question, please submit your request using the form below or give us a call at the number below.
 </p>
-    <form method="POST">
-        <fieldset>
+    <form id="contact-form" method="POST">
+       
             {% csrf_token %}
 
             <label>Name:*</label>
-            <div id="name-div">
-                <input id="fname" placeholder="first name" type="text">
-                <input id="lname" placeholder="last name" type="text">
-            </div>
-
-            <label for="cname" id="cname-label">Company Name:*</label>
-            <br>
-            <input type="text" id="cname">
-
-
-            <label for="ptitle" id="ptitle-label">Position/Title:*</label>
-            <br>
-            <input type="text" id="ptitle">
+            <fieldset id="name-div">
+                <input required id="fname" placeholder="first name" type="text">
+                <input required id="lname" placeholder="last name" type="text">
+            </fieldset>
 
             <label for="email" id="email-label">Email Address:*</label>
             <br>
-            <input type="email" id="email">
-            <div>
+            <input required type="email" id="email">
 
-                <label for="wphone" id="phone-label">Work Phone:*</label>
-                <br>
-                <input type="text" id="wphone">
-            </div>
-
-            <div>
-
-                <label for="cphone" id="cell-label">Cell Phone:*</label>
-                <br>
-                <input type="text" id="cphone">
-            </div>
-
-            <div>
-
-                <label for="city" id="city-label">City:*</label>
-                <br>
-                <input type="email" id="city">
-            </div>
+            <label for="subject" id="subjects-label">Subject:*</label>
+            <br>
+            <input required type="text" id="subject">
 
             <label for="states" id="states-label">State:*</label>
             <br>
 
-            <select name="state" id="states">
+            <select required name="state" id="states">
                 <option value="alberta">Alberta</option>
                 <option value="british-columbia">British Columbia</option>
                 <option value="manitoba">Manitoba</option>
@@ -72,18 +47,21 @@
             </select>
 
 
-            <label for="comment" id="comment-label">Comment:*</label>
+            <label for="comment" id="comment-label">Message:*</label>
             <br>
-            <textarea name="comment" id="comment" cols="30" rows="5"></textarea>
+            <textarea required name="comment" id="comment" cols="30" rows="5"></textarea>
 
             <button id="submit" type="submit">SUBMIT</button>
 
-        </fieldset>
     </form>
+
+    <div id="feedback" style='display:none' class="alert alert-primary mt-3" role="alert">
+      </div>
 </div>
 
 {% endblock %}
 
 {% block scripts %}
 <link rel="stylesheet" href="{% static 'shops/contact.css' %}">
+<script src="{% static 'shops/contact.js' %}"></script>
 {% endblock %}

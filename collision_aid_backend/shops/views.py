@@ -6,6 +6,8 @@ from django.http import JsonResponse
 from django.db.models import Max, Min, Avg
 import requests
 from django.core.exceptions import ValidationError
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 def index(request):
@@ -76,7 +78,17 @@ def rate_survey(request):
 def contact(request):
     if request.method == 'POST':
         data = {key:request.POST.get(key) for key in request.POST.keys()}
-        print(data)
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = [data.get('Email'), ]
+        subject = f"From {data['First Name']}"
+        message = f'Testing mail {data["Message"]}'
+        try:
+            send_mail(subject, message, email_from, recipient_list)
+            response = {'message': 'Your message has been sent',
+                        'status': 'success'}
+        except:
+            response = {'message': 'Your message could not be sent',
+                        'status': 'danger'}
 
-        return JsonResponse({"message": 'done'})
+        return JsonResponse(response)
     return render(request, 'shops/contact.html')

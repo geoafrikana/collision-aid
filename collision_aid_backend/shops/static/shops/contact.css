@@ -29,7 +29,7 @@ form{
     width: 62%
 }
 
-#cname, #ptitle, #email, #states, #comment, #submit{
+#cname, #email, #states, #comment, #submit, #subject{
     width: 100%;
 }
 
