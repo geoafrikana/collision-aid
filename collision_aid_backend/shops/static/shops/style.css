@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+body{
+    font-family: 'montserrat';
+    font-weight: 400;
+}
 
 #alert, #table-div{
     display: none;
@@ -16,12 +19,10 @@ th{
     border: 1px solid rgb(233, 229, 229);
     border-collapse: collapse;
     text-align: center;
-    font-family: 'Open Sans';
-
   }
 
   #popup-div{
-    font-family: 'Open Sans';
+    font-weight: 300;
   }
 
 #popup-div table, #popup-div tr, #popup-div th{
@@ -46,6 +47,9 @@ th{
 
 #top-header{
     max-width: 900px;
+    font-family:'Oswald', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    font-style: italic;
 }
 
 small{
@@ -66,6 +70,23 @@ small{
     width: 100px;
 }
 
+#submit{
+    margin-top: 10px;
+    color: white;
+    background-color: #8F2626;
+    border: 1px solid #4d1616;
+    border-radius: 5px;
+}
+
+#submit:hover{
+    color: #4d1616;
+    background-color: rgb(232, 103, 99);
+}
+
+input[type=checkbox] {
+    accent-color: #8F2626;
+  }
+
 
 .my-navbar{
 background-color: white;
@@ -75,6 +96,8 @@ box-shadow: 0 1px 5px -2px rgb(143, 38, 38);
 
 footer{
     background-color:rgb(143, 38, 38);
+    font-family: 'montserrat';
+    font-weight: 200;
 }
 footer a{
     text-decoration: none;
@@ -85,7 +108,34 @@ footer small {
     color: white;
 }
 
+.h{
+    font-family: 'Oswald';
+}
+.h-major{
 
+    font-weight: 600;
+}
+.h-middle{
+    font-weight: 500;
+}
+.h-minor{
+    font-weight: 400;
+}
+
+.p-sub{
+    width: 100%;
+    max-width: 600px;
+}
+
+input:focus, textarea:focus{
+    outline: none;
+    border:1px solid #8F2626;
+    box-shadow: 0 0 5px #8F2626;
+}
+
+label{
+    color:#8F2626
+}
 
 * {
     box-sizing: border-box;
@@ -102,7 +152,8 @@ body {
     justify-content: space-between;
     align-items: center;
     color: white;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family:'Oswald', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
 }
 
 .brand-title {

@@ -4,82 +4,81 @@
 {% block title%}Contact{% endblock %}
 {% block body %}
 
-<div class="contact-form-container">
-    <form>
-        <div>
-            <label>Name*</label>
+<div class="container my-5 contact-form-container">
+<h1 class="h" >Contact Us</h1>
+<hr>
+<p>To ask a question, please submit your request using the form below or give us a call at the number below.
+</p>
+    <form method="POST">
+        <fieldset>
+            {% csrf_token %}
+
+            <label>Name:*</label>
             <div id="name-div">
                 <input id="fname" placeholder="first name" type="text">
                 <input id="lname" placeholder="last name" type="text">
             </div>
 
-            <div>
-                <label for="cname" id="cname-label">Company Name*</label>
-                <br>
-                <input type="text" id="cname">
-            </div>
+            <label for="cname" id="cname-label">Company Name:*</label>
+            <br>
+            <input type="text" id="cname">
 
-            <div>
-                <label for="ptitle" id="ptitle-label">Position/Title*</label>
-                <br>
-                <input type="text" id="ptitle">
-            </div>
 
-            <div>
-                <label for="email" id="email-address">Email Address*</label>
-                <br>
-                <input type="email" id="email">
-            </div>
+            <label for="ptitle" id="ptitle-label">Position/Title:*</label>
+            <br>
+            <input type="text" id="ptitle">
 
+            <label for="email" id="email-label">Email Address:*</label>
+            <br>
+            <input type="email" id="email">
             <div>
-                <label for="wphone" id="work-phone">Work Phone*</label>
+
+                <label for="wphone" id="phone-label">Work Phone:*</label>
                 <br>
                 <input type="text" id="wphone">
             </div>
 
             <div>
-                <label for="cphone" id="cell-phone">Cell Phone*</label>
+
+                <label for="cphone" id="cell-label">Cell Phone:*</label>
                 <br>
                 <input type="text" id="cphone">
             </div>
 
             <div>
-                <label for="city" id="sity-label">City*</label>
+
+                <label for="city" id="city-label">City:*</label>
                 <br>
                 <input type="email" id="city">
             </div>
 
-            <div>
-                <label for="states" id="states-label">State</label> <br>
+            <label for="states" id="states-label">State:*</label>
+            <br>
 
-                <select name="state" id="states">
-                    <option value="alberta">Alberta</option>
-                    <option value="british-columbia">British Columbia</option>
-                    <option value="manitoba">Manitoba</option>
-                    <option value="new-brunswick">New Brunswick</option>
-                    <option value="newfoundland">Newfoundland and Labrado</option>
-                    <option value="northwest-territories">Northwest Territories</option>
-                    <option value="nova-scotia">Nova Scotia</option>
-                    <option value="nunavit">Nunavut</option>
-                    <option value="ontario">Ontario</option>
-                    <option value="prince-edward-island">Prince Edward Island</option>
-                    <option value="quebec">Quebec</option>
-                    <option value="saskatchewan">Saskatchewan</option>
-                    <option value="yukon">Yukon</option>
-                </select>
+            <select name="state" id="states">
+                <option value="alberta">Alberta</option>
+                <option value="british-columbia">British Columbia</option>
+                <option value="manitoba">Manitoba</option>
+                <option value="new-brunswick">New Brunswick</option>
+                <option value="newfoundland">Newfoundland and Labrado</option>
+                <option value="northwest-territories">Northwest Territories</option>
+                <option value="nova-scotia">Nova Scotia</option>
+                <option value="nunavit">Nunavut</option>
+                <option value="ontario">Ontario</option>
+                <option value="prince-edward-island">Prince Edward Island</option>
+                <option value="quebec">Quebec</option>
+                <option value="saskatchewan">Saskatchewan</option>
+                <option value="yukon">Yukon</option>
+            </select>
 
-            </div>
 
-            <div>
-                <label for="comment" id="comment-label">Comment</label>
-                <br>
-                <textarea name="comment" id="comment" cols="30" rows="5"></textarea>
-            </div>
+            <label for="comment" id="comment-label">Comment:*</label>
+            <br>
+            <textarea name="comment" id="comment" cols="30" rows="5"></textarea>
 
-            <div>
-                <input class="" type="button" id="submit" value="SUBMIT">
-            </div>
-        </div>
+            <button id="submit" type="submit">SUBMIT</button>
+
+        </fieldset>
     </form>
 </div>
 

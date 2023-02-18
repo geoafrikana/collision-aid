@@ -101,7 +101,7 @@ form.addEventListener('submit', (e) => {
             else {
                 let gj = JSON.parse(data['data'])
                 messageBox.classList.add('alert-success')
-                messageBox.innerText = `Your query return ${gj.features.length} shops`
+                messageBox.innerText = `Your query returned ${gj.features.length} shops`
 
                 let geoJSONLayer = L.geoJSON(gj, {
                     style: { color: 'red' }

@@ -11,7 +11,7 @@ from django.core.exceptions import ValidationError
 def index(request):
     if request.method == "POST":
         zip_code = request.POST.get('zip_code')
-        radius = int(request.POST.get('search_radius')) * 1609.34 # miles to metres
+        radius = int(request.POST.get('search_radius')) * 1000 # km to metres
         response = {}
         try:
             z = ZipCodes.objects.get(ZIP=zip_code)
@@ -74,4 +74,9 @@ def rate_survey(request):
     return render(request, 'shops/ratesurvey.html')
 
 def contact(request):
+    if request.method == 'POST':
+        data = {key:request.POST.get(key) for key in request.POST.keys()}
+        print(data)
+
+        return JsonResponse({"message": 'done'})
     return render(request, 'shops/contact.html')
