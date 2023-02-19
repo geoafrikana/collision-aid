@@ -76,21 +76,19 @@ def load_shop(fp):
         s.save()
         print(f"{s.business_name} {s.post_scan}")
 
-def load_zip_codes(fp):
+def load_postal_codes(fp):
   with open(fp, 'r') as file:
-    data = csv.reader(file)
+    data = csv.reader(file, delimiter=',')
     for row in data:
-      if row[0] == 'ZIP':
+      if row[0] == 'POSTAL_CODE':
         continue
       else:
-        x=float(row[2])
-        y=float(row[1])
+        x=float(row[5])
+        y=float(row[4])
         x = round(x, 6)
         y= round(y,6)
-        point = Point(x=x, y=y, srid=4326)
-        point.transform(3857)
-        z = ZipCodes(ZIP=row[0],
-        lat=row[1], lon=row[2], geom=point)
+        point = Point(x=x, y=y, srid=4326).transform(3857, clone=True)
+        z = ZipCodes(ZIP=row[0], lat=y, lon=x, geom=point)
         print(z)
         z.save()
     print('done')

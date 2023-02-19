@@ -74,7 +74,7 @@ class Shop(models.Model):
         return f"{self.business_name} {self.geom} {self.geom_m}"
 
 class ZipCodes(models.Model):
-    ZIP = models.CharField(max_length=6)
+    ZIP = models.CharField(max_length=10)
     lat = models.DecimalField(max_digits=10, decimal_places=6)
     lon = models.DecimalField(max_digits=10, decimal_places=6)
     geom = models.PointField(srid=3857)
