@@ -18,8 +18,9 @@ contactForm.addEventListener('submit', (e)=>{
         {
             method: 'POST',
             headers: {
-                'X-CSRFtoken':
-                    csrfToken
+                'X-CSRFtoken': csrfToken,
+                'Accept': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
             },
             mode: 'same-origin',
             body: formData
