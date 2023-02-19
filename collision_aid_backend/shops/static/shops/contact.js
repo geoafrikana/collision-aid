@@ -42,7 +42,7 @@ contactForm.addEventListener('submit', (e)=>{
          document.getElementById('submit').disabled =  true
          document.getElementById('submit').style.backgroundColor =  '#808080'
          document.getElementById('submit').style.color = '#fff'
-            return
+            return false;
         })
 
 
