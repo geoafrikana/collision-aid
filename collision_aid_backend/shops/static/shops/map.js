@@ -52,7 +52,7 @@ myInput.addEventListener("input", function(event) {
   const value = event.target.value.trim();
 
   if (!regex.test(value)) {
-    event.target.setCustomValidity("Expected format: T4N 1P8. Mind the space"); // set your custom error message here
+    event.target.setCustomValidity("Kindly follow the format in the placeholder"); // set your custom error message here
     doc
   } else {
     event.target.setCustomValidity(""); // clear the error message if the value matches the regex
