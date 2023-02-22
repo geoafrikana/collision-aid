@@ -45,6 +45,19 @@ const osm = L.tileLayer('http://mt0.google.com/vt/lyrs=m&hl=en&x={x}&y={y}&z={z}
 osm.name = 'googleBaseMap'
 osm.addTo(map);
 
+const myInput = document.getElementById("zip_code");
+
+myInput.addEventListener("input", function(event) {
+  const regex = /[A-Z][0-9][A-Z]\s[0-9][A-Z][0-9]/; // specify your regular expression here
+  const value = event.target.value.trim();
+
+  if (!regex.test(value)) {
+    event.target.setCustomValidity("Expected format: T4N 1P8. Mind the space"); // set your custom error message here
+    doc
+  } else {
+    event.target.setCustomValidity(""); // clear the error message if the value matches the regex
+  }
+});
 
 
 const formData = new FormData()
@@ -53,7 +66,6 @@ const form = document.getElementById('home-form');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
-
 
     const zip_code = document.getElementById('zip_code').value
     const search_radius = document.getElementById('search_radius').value

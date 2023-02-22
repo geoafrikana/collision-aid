@@ -71,9 +71,9 @@
                 <input type="text" class="f w-50" required id="city" name="city"><br>
 
                 <label class="mt-3" for="website">Website:</label><br>
-                <input type="url" class="f w-50"
-                 required id="website" name="website"
-                 placeholder="https://example.com"><br>
+                <input type="text" class="f w-50"
+                  id="website" name="website" pattern="^(?:(?:https?|ftp)://)?[^\s/$.?#].[^\s]*$"
+                 placeholder="https://example.com or www.example.com or example.com"><br>
             </fieldset>
 
 

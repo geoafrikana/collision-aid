@@ -1,6 +1,5 @@
 const formData = new FormData();
 
-// let dummyForm = {}
 let form = document.getElementById('rate-survey-form')
 
 const validateEmails =  async()=>{
@@ -12,15 +11,6 @@ const validateEmails =  async()=>{
         return 'invalid'
     }
    }
-
-// let arr = ['Sample Biz',
-//  '1600 Amphitheatre Parkway, Mountain View, CA',
-// 'hevdjgukwebci;nlwkec',
-// '+2349037838682', 'Lagos','http://www.geoafrikana.com',
-//  'Nasiru', 'Olagunju','Principal Consultant', '234-555-1234',
-//  'nasir@geoafrikana.com','nasir@geoafrikana.com',
-//  20, 50, 70, 100, 200, 50,60, 50, 39, 200,
-// 250, 175, 110, 89, 91, 180, 42, 5, 67, 29]
 
 form.addEventListener('submit', async (event) => {
     event.preventDefault();

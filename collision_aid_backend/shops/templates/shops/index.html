@@ -46,7 +46,7 @@
 				<form class="p-3 w-100" action="" id="home-form">
 					{% csrf_token %}
 					<label for="zip_code">Postal Code:</label><br>
-					<input type="text" class="w-100" placeholder="T4N 1P8" required id="zip_code" name="zip_code"><br>
+					<input type="text" pattern="[A-Z][0-9][A-Z]\s[0-9][A-Z][0-9]" class="w-100" placeholder="T4N 1P8" required id="zip_code" name="zip_code"><br>
 
 
 					<label for="search_radius">Search Radius:</label><br>

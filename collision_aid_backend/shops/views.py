@@ -57,22 +57,28 @@ def rate_survey(request):
     if request.method == 'POST':
         a = {key:request.POST.get(key) for key in request.POST.keys()}
         address = a.get('physical_address')
-        url= f'https://nominatim.openstreetmap.org/search/?q={address}&format=json'
-        r = requests.get(url)
+        business_name = a.get('business_name')
         try:
-            r = r.json()[0]
+            address = address.lower()
+            Shop.objects.get(business_name = business_name)
+            return JsonResponse({'message': f'{business_name} is already registered'})
         except:
-            return JsonResponse({'message': 'The physical location could not be verified, please check.'})
-        a['lat'] = float(r.get('lat'))
-        a['lon'] = float(r.get('lon'))
-        s = Shop(**a)
-        try:
-            s.clean()
-            print(s)
-        except ValidationError as e:
-            return JsonResponse({'message': 'The physical location could not be verified, please check.'})
-        s.save()
-        return JsonResponse({'message': 'Shop added successfully'})
+            url= f'https://nominatim.openstreetmap.org/search/?q={address}&format=json'
+            r = requests.get(url)
+            try:
+                r = r.json()[0]
+            except:
+                return JsonResponse({'message': 'The physical location could not be verified, please check.'})
+            a['lat'] = float(r.get('lat'))
+            a['lon'] = float(r.get('lon'))
+            a['business_name'] = a['business_name'].lower()
+            s = Shop(**a)
+            try:
+                s.clean()
+            except ValidationError as e:
+                return JsonResponse({'message': 'The physical location could not be verified, please check.'})
+            s.save()
+            return JsonResponse({'message': 'Shop added successfully'})
     return render(request, 'shops/ratesurvey.html')
 
 def contact(request):

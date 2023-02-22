@@ -182,8 +182,8 @@ body {
     padding: 1rem;
 }
 
-.my-navbar-links li:hover {
-    background-color: rgb(232, 103, 99);
+.my-navbar-links li a:hover {
+    text-decoration: underline;
 }
 
 .header-logo{
