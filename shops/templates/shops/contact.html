@@ -1,0 +1,92 @@
+{% extends 'shops/base.html' %}
+{% load static %}
+
+{% block title%}Contact{% endblock %}
+
+{% block open_graph %} 
+ <!-- HTML Meta Tags -->
+ <title>Collision Aid</title>
+ <meta name="description" content="To ask a question, please submit your request using the form below or give us a call at the number below">
+
+ <!-- Facebook Meta Tags -->
+ <meta property="og:url" content="https://www.collision-aid.ca/contact/">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="Contact Collision Aid">
+ <meta property="og:description" content="To ask a question, please submit your request using the form below or give us a call at the number below">
+ <meta property="og:image" content="https://www.collision-aid.ca/static/shops/logo_pp.png">
+
+ <!-- Twitter Meta Tags -->
+ <meta name="twitter:card" content="summary_large_image">
+ <meta property="twitter:domain" content="collision-aid.ca">
+ <meta property="twitter:url" content="https://www.collision-aid.ca/contact/">
+ <meta name="twitter:title" content="Collision Aid">
+ <meta name="twitter:description" content="To ask a question, please submit your request using the form below or give us a call at the number below">
+ <meta name="twitter:image" content="https://www.collision-aid.ca/static/shops/logo_pp.png">
+
+ <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+       
+{% endblock %}
+
+{% block body %}
+
+<div class="container my-5 contact-form-container">
+<h1 class="h" >Contact Us</h1>
+<hr>
+<p>To ask a question, please submit your request using the form below or give us a call at the number below.
+</p>
+    <form id="contact-form" method="POST">
+       
+            {% csrf_token %}
+
+            <label>Name:*</label>
+            <fieldset id="name-div">
+                <input required id="fname" placeholder="first name" type="text">
+                <input required id="lname" placeholder="last name" type="text">
+            </fieldset>
+
+            <label for="email" id="email-label">Email Address:*</label>
+            <br>
+            <input required type="email" id="email">
+
+            <label for="subject" id="subjects-label">Subject:*</label>
+            <br>
+            <input required type="text" id="subject">
+
+            <!-- <label for="states" id="states-label">State:*</label>
+            <br>
+
+            <select required name="state" id="states">
+                <option value="alberta">Alberta</option>
+                <option value="british-columbia">British Columbia</option>
+                <option value="manitoba">Manitoba</option>
+                <option value="new-brunswick">New Brunswick</option>
+                <option value="newfoundland">Newfoundland and Labrado</option>
+                <option value="northwest-territories">Northwest Territories</option>
+                <option value="nova-scotia">Nova Scotia</option>
+                <option value="nunavit">Nunavut</option>
+                <option value="ontario">Ontario</option>
+                <option value="prince-edward-island">Prince Edward Island</option>
+                <option value="quebec">Quebec</option>
+                <option value="saskatchewan">Saskatchewan</option>
+                <option value="yukon">Yukon</option>
+            </select> -->
+
+
+            <label for="message" id="message-label">Message:*</label>
+            <br>
+            <textarea required name="message" id="message" cols="30" rows="5"></textarea>
+
+            <button id="submit" type="submit">SUBMIT</button>
+
+    </form>
+
+    <div id="feedback" style='display:none' class="alert alert-primary mt-3" role="alert">
+      </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<link rel="stylesheet" href="{% static 'shops/contact.css' %}">
+<script src="{% static 'shops/contact.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,68 @@
+.contact-form-container{
+    width: 100%;
+    max-width: 600px;
+    /* padding: 0 5px 5px; */
+
+
+    /* border:1px solid #8F2626; */
+    /* box-shadow: 0 0 10px #8F2626; */
+}
+.h{
+    font-family: 'Oswald';
+    font-weight: 400;
+}
+form{
+    width: 100%;
+}
+
+#name-div{
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#name-div #fname{
+    width: 35%
+}
+
+#name-div #lname{
+    width: 62%
+}
+
+#cname, #email, #states, #message, #submit, #subject{
+    width: 100%;
+}
+
+#wphone, #cphone{
+    width:50%;
+}
+
+#city{
+    width: 75%;
+}
+
+label{
+    margin-top: 10px;
+    color:#8F2626;
+}
+
+#submit{
+    margin-top: 10px;
+    color: white;
+    background-color: #8F2626;
+    border: 1px solid #4d1616;
+    border-radius: 5px;
+}
+
+#submit:hover{
+    color: #4d1616;
+    background-color: rgb(232, 103, 99);
+}
+
+
+
+input:focus, textarea:focus{
+    outline: none;
+    border:1px solid #8F2626;
+    box-shadow: 0 0 5px #8F2626;
+}
